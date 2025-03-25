@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Test Idea Platform</string>
+    <string name="app_name" translatable="false">Test Idea Platform</string>
+    <string name="goods_list">Goods list</string>
+    <string name="search">Search</string>
+    <string name="edit_content_description">Edit</string>
+    <string name="delete_content_description">Delete</string>
+    <string name="at_warehouse">At warehouse</string>
+    <string name="date_added">Date added</string>
+
 </resources>

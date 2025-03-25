@@ -1,0 +1,9 @@
+<resources>
+    <string name="goods_list">Список товаров</string>
+    <string name="search">Поиск</string>
+    <string name="edit_content_description">Изменить</string>
+    <string name="delete_content_description">Удалить</string>
+    <string name="at_warehouse">На складе</string>
+    <string name="date_added">Дата добавления</string>
+
+</resources>
