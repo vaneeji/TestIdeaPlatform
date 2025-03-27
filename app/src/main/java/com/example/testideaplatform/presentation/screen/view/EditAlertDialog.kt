@@ -6,10 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AddCircle
-import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,7 +24,6 @@ import androidx.compose.ui.res.stringResource
 import com.example.testideaplatform.R
 import com.example.testideaplatform.presentation.model.ItemViewData
 import com.example.testideaplatform.presentation.theme.Size36
-import com.example.testideaplatform.presentation.theme.Size48
 import com.example.testideaplatform.presentation.theme.Space12
 import com.example.testideaplatform.presentation.theme.Typography
 

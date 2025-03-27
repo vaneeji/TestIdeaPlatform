@@ -1,6 +1,5 @@
 package com.example.testideaplatform.datasource.local.service
 
-import androidx.room.PrimaryKey
 import com.example.testideaplatform.data.service.IItemDaoService
 import com.example.testideaplatform.datasource.local.db.TestIdeaPlatformDb
 import com.example.testideaplatform.datasource.local.db.dao.ItemDao

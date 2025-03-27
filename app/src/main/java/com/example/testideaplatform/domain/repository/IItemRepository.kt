@@ -1,6 +1,5 @@
 package com.example.testideaplatform.domain.repository
 
-import com.example.testideaplatform.datasource.local.db.model.ItemEntity
 import com.example.testideaplatform.domain.model.Item
 import kotlinx.coroutines.flow.Flow
 

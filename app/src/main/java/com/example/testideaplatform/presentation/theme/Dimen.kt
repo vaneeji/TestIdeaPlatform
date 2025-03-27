@@ -3,8 +3,6 @@ package com.example.testideaplatform.presentation.theme
 import androidx.compose.ui.unit.dp
 
 val Size36 = 36.dp
-val Size48 = 48.dp
-val Size64 = 64.dp
 val Size4 = 4.dp
 
 val Space20 = 20.dp

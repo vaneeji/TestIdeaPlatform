@@ -1,11 +1,9 @@
 package com.example.testideaplatform.data.repository
 
 import com.example.testideaplatform.data.service.IItemDaoService
-import com.example.testideaplatform.datasource.local.db.model.ItemEntity
 import com.example.testideaplatform.domain.model.Item
 import com.example.testideaplatform.domain.repository.IItemRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 class ItemRepository(
     private val itemDaoService: IItemDaoService

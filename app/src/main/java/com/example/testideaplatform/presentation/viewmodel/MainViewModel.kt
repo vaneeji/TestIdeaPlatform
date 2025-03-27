@@ -1,9 +1,7 @@
 package com.example.testideaplatform.presentation.viewmodel
 
-import androidx.compose.runtime.MutableState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testideaplatform.data.repository.ItemRepository
 import com.example.testideaplatform.domain.model.Item
 import com.example.testideaplatform.domain.repository.IItemRepository
 import com.example.testideaplatform.presentation.mapper.toDomain
