@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Test Idea Platform</string>
+    <string name="app_name" translatable="false">Test Idea Platform</string>
+    <string name="goods_list">Goods list</string>
+    <string name="search">Search goods</string>
+    <string name="edit_content_description">Edit</string>
+    <string name="delete_button_content_description">Delete</string>
+    <string name="at_warehouse">At warehouse</string>
+    <string name="date_added">Date added</string>
+    <string name="delete_dialog_content_description">Delete good</string>
+    <string name="good_delete_action_title">Delete good</string>
+    <string name="good_delete_text">Are you sure you want to delete chosen good?</string>
+    <string name="confirm_delete">Yes</string>
+    <string name="dismiss_delete">Cancel</string>
+    <string name="confirm_edit">Accept</string>
+    <string name="dismiss_edit">Cancel</string>
+    <string name="edit_dialog_title">Amount</string>
+    <string name="remove_btn_content_description">Remove</string>
+    <string name="add_btn_content_description">Add</string>
 </resources>
