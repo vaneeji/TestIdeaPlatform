@@ -32,6 +32,9 @@ class MainViewModel @Inject constructor(
         }
         .stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
+    private val _itemToInteractWith: MutableStateFlow<ItemViewData?> = MutableStateFlow(null)
+    val itemToInteractWith: StateFlow<ItemViewData?> = _itemToInteractWith
+
     val itemsToShow: StateFlow<List<ItemViewData>> =
         _items.combine(_searchFieldInput) { items, searchFieldValue ->
             items.filter { item ->
@@ -43,9 +46,23 @@ class MainViewModel @Inject constructor(
         _searchFieldInput.value = fieldValue
     }
 
-    fun onDeleteClicked(id: Int) {
-        viewModelScope.launch {
-            itemRepository.deleteItem(id)
+    fun onDeleteClicked(item: ItemViewData?) {
+        if (item != null) {
+            viewModelScope.launch {
+                itemRepository.deleteItem(item.id)
+            }
         }
+    }
+
+    fun onEditClicked(item: ItemViewData?) {
+        if (item != null) {
+            viewModelScope.launch {
+                itemRepository.updateItem(item.toDomain())
+            }
+        }
+    }
+
+    fun selectItemToInteractWith(item: ItemViewData) {
+        _itemToInteractWith.value = item
     }
 }

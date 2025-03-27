@@ -22,6 +22,9 @@ interface ItemDao {
     @Query("delete from item where id = :id")
     suspend fun deleteItem(id: Int)
 
-    @Update
-    suspend fun updateItem(item: ItemEntity)
+    @Query("update item set name = :name, time = :time, tags = :tags, amount = :amount where id = :id ")
+    suspend fun updateItem(
+        id: Int, name: String,
+        time: Long, tags: String, amount: Int
+    )
 }

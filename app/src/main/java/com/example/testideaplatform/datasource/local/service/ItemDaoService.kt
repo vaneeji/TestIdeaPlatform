@@ -43,9 +43,17 @@ class ItemDaoService(
         }
     }
 
-    override suspend fun updateItem(item: ItemEntity) {
+    override suspend fun updateItem(item: Item) {
         withContext(dispatcher) {
-            itemDao.updateItem(item)
+            val itemEntity = item.toEntity()
+
+            itemDao.updateItem(
+                id = itemEntity.id,
+                name = itemEntity.name,
+                time = itemEntity.time,
+                tags = itemEntity.tags,
+                amount = itemEntity.amount
+            )
         }
     }
 }

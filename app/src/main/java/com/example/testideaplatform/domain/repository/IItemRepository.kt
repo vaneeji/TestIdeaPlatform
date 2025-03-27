@@ -13,5 +13,5 @@ interface IItemRepository {
 
     suspend fun deleteItem(id: Int)
 
-    suspend fun updateItem(item: ItemEntity)
+    suspend fun updateItem(item: Item)
 }

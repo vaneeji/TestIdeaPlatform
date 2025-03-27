@@ -21,20 +21,20 @@ fun ItemEntity.toDomain(): Item = Item(
 
 private fun List<String>.tagsToEntity(): String =
     StringBuilder().apply {
-        append('[')
-
-        forEach { tag ->
-            append("\"$tag\", ")
+        this@tagsToEntity.forEach { tag ->
+            append("$tag,")
         }
-        removeSuffix(", ")
-
-        append(']')
     }.toString()
 
 private fun String.tagsToDomain(): List<String> {
-    val stringWithoutBrackets = removePrefix("[").removeSuffix("]")
+    val copy = this
+    val formattedString = copy.run {
+        this@run.replace("[", "")
+            .replace("]", "")
+            .replace("\"", "")
+    }
 
-    val tags = stringWithoutBrackets.filter { it != '"' }.split(", ")
+    val tags = formattedString.split(",")
 
     return tags
 }

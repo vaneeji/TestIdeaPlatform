@@ -22,7 +22,7 @@ class ItemRepository(
         itemDaoService.deleteItem(id)
     }
 
-    override suspend fun updateItem(item: ItemEntity) {
+    override suspend fun updateItem(item: Item) {
         itemDaoService.updateItem(item)
     }
 }
