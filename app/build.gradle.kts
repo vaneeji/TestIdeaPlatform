@@ -24,6 +24,7 @@ android {
         room {
             schemaDirectory("$projectDir/schema")
         }
+        setProperty("archivesBaseName", "ip-test-task")
     }
 
     buildTypes {
