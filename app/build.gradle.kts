@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,7 +10,36 @@ plugins {
     alias(libs.plugins.hilt)
 }
 
+val appSignPassword: String by project
+
+val pathStoreFile = "$rootDir/signing/TestIdeaPlatform.jks"
+
+fun getLocalProperty(key: String, file: String = "local.properties"): String {
+    val props = Properties()
+    val localProps = rootProject.file(file)
+    if (localProps.exists()) {
+        localProps.inputStream().use {
+            props.load(it)
+        }
+    }
+
+    return props.getProperty(key) ?: ""
+}
+
 android {
+    signingConfigs {
+        val password by lazy { getLocalProperty("appSignPassword") }
+        create("release") {
+            storeFile = file(pathStoreFile)
+            storePassword = appSignPassword.ifBlank { password }
+            keyAlias = getLocalProperty(
+                "keyAlias",
+                "$rootDir/signing/keystore-release.properties"
+            )
+            keyPassword = appSignPassword.ifBlank { password }
+        }
+    }
+
     namespace = "com.example.testideaplatform"
     compileSdk = 35
 
@@ -27,6 +58,15 @@ android {
         setProperty("archivesBaseName", "ip-test-task")
     }
 
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("arm64-v8a", "x86_64")
+            isUniversalApk = true
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -34,6 +74,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs["release"]
         }
     }
     compileOptions {
